@@ -29,4 +29,4 @@ cypress/videos
 cypress/screenshots
 cypress/reports
 
-package-lock.json
+#package-lock.json
