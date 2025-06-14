@@ -14,8 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+
+import './commands';
 import '@badeball/cypress-cucumber-preprocessor';
+import '@shelex/cypress-allure-plugin';
 import svg4everybody from 'svg4everybody';
 svg4everybody();
 

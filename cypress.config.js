@@ -2,6 +2,7 @@ const { defineConfig } = require('cypress');
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
@@ -18,6 +19,9 @@ module.exports = defineConfig({
         })
       );
 
+      // Ativa o plugin Allure
+      allureWriter(on, config);
+
       return config;
     },
     baseUrl: 'https://front.serverest.dev',
@@ -26,5 +30,8 @@ module.exports = defineConfig({
     viewportWidth: 1000,
     viewportHeight: 660,
     specPattern: 'cypress/integration/**/*.feature',
+    env: {
+      allure: true
+    }
   },
 });

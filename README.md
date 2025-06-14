@@ -58,7 +58,7 @@ Existe um arquivo de exemplo chamado `.cypress.env.example` para facilitar o pre
 Clone o repositório:
 
 ```bash
-git clone git@github.com:seu-usuario/serverest-qa-cypress.git
+git clone https://github.com/Gabriel950Amaral/serverest-qa-cypress.git
 cd serverest-qa-cypress
 ```
 
@@ -87,30 +87,19 @@ npm run cypress:open
 ### Executar os testes no modo headless:
 
 ```bash
-npm run cy:run
+npx cypress run
 ```
 
 ---
 
-## Geração de relatórios
 
 ### Gerar relatório Allure após execução dos testes:
 
-```bash
-npm run allure:report
-```
+1. Execute os testes normalmente:
+   ```bash
+   npx cypress run
+   ```
 
-### Gerar histórico de relatórios:
-
-```bash
-npm run allure:history
-```
-
-### Limpar relatórios anteriores:
-
-```bash
-npm run allure:clear
-```
 
 ---
 
