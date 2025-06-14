@@ -5,7 +5,7 @@ import CadastroElements from "../elements/CadastroElements";
 const faker = require('faker-br');
 
 const userValido = {
-  email: 'beltrano100223@qa.com.br',
+  email: 'fulano@qa.com',
   senha: 'teste'
 };
 
@@ -113,7 +113,7 @@ class LoginPage {
     cy.url().should('eq', `${url}/login`);
     cy.get(cadastroElements.inputEmail()).should('be.visible');
     cy.get(cadastroElements.inputSenha()).should('be.visible');
-    cy.get(cadastroElements.botaEntrar()).should('be.visible');
+    cy.get(cadastroElements.botaoEntrar()).should('be.visible');
   }
 }
 
