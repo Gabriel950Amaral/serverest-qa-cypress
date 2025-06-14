@@ -1,0 +1,14 @@
+name: Auto Assign Reviewers
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  add-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add reviewers to PR
+        uses: ahmadnassri/action-pr-reviewer@v1
+        with:
+          reviewers: Gabriel950Amaral
