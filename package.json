@@ -1,0 +1,31 @@
+{
+  "name": "cypress-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+    "@cypress/webpack-preprocessor": "^6.0.4",
+    "@faker-js/faker": "^8.4.1",
+    "cucumber": "^6.0.7",
+    "cypress": "^13.17.0",
+    "esbuild": "^0.25.5",
+    "eslint": "^9.3.0",
+    "faker-br": "^0.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps"
+  },
+  "dependencies": {
+    "faker": "^5.5.3",
+    "svg4everybody": "^2.1.9"
+  }
+}
