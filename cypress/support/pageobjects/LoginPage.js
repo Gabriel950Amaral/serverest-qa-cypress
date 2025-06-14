@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 import CadastroElements from "../elements/CadastroElements";
 
@@ -14,36 +14,9 @@ const userInvalido = {
   senha: 'senhaInvalida'
 };
 
-const gerarTelefoneCelular = () => {
-    const DDD = faker.address.zipCode().slice(0, 2); // Obtém dois primeiros dígitos para o código de área
-    const primeiraParte = `9${faker.random.number({min: 1000, max: 9999})}`; // Sempre começa com '9' seguido de quatro dígitos
-    const segundaParte = faker.random.number({min: 1000, max: 9999}); // Quatro últimos dígitos
-    return `(${DDD}) ${primeiraParte}-${segundaParte}`;
-};
-
-
-const gerarDataNascimento = () => {
-    const hoje = new Date();
-    const idadeMaxima = 99;
-    const idadeMinima = 18;
-    const dataMaxima = new Date(hoje.getFullYear() - idadeMinima, hoje.getMonth(), hoje.getDate());
-    const dataMinima = new Date(hoje.getFullYear() - idadeMaxima, hoje.getMonth(), hoje.getDate());
-    const dataRandomica = faker.date.between(dataMinima, dataMaxima);
-
-    // Formate a data como dd/mm/aaaa
-    const dia = String(dataRandomica.getDate()).padStart(2, '0');
-    const mes = String(dataRandomica.getMonth() + 1).padStart(2, '0');
-    const ano = dataRandomica.getFullYear();
-
-    return `${dia}/${mes}/${ano}`;
-};
-
 
 const cadastroElements = new CadastroElements();
 const url = Cypress.config("baseUrl");
-
-
-
 
 class LoginPage {
   // Acessa o site que será testado
