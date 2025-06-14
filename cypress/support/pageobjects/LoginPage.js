@@ -1,0 +1,120 @@
+/// <reference types="Cypress" />
+
+import CadastroElements from "../elements/CadastroElements";
+
+const faker = require('faker-br');
+
+const userValido = {
+  email: 'beltrano100223@qa.com.br',
+  senha: 'teste'
+};
+
+const userInvalido = {
+  email: 'invalido@teste.com',
+  senha: 'senhaInvalida'
+};
+
+const gerarTelefoneCelular = () => {
+    const DDD = faker.address.zipCode().slice(0, 2); // Obtém dois primeiros dígitos para o código de área
+    const primeiraParte = `9${faker.random.number({min: 1000, max: 9999})}`; // Sempre começa com '9' seguido de quatro dígitos
+    const segundaParte = faker.random.number({min: 1000, max: 9999}); // Quatro últimos dígitos
+    return `(${DDD}) ${primeiraParte}-${segundaParte}`;
+};
+
+
+const gerarDataNascimento = () => {
+    const hoje = new Date();
+    const idadeMaxima = 99;
+    const idadeMinima = 18;
+    const dataMaxima = new Date(hoje.getFullYear() - idadeMinima, hoje.getMonth(), hoje.getDate());
+    const dataMinima = new Date(hoje.getFullYear() - idadeMaxima, hoje.getMonth(), hoje.getDate());
+    const dataRandomica = faker.date.between(dataMinima, dataMaxima);
+
+    // Formate a data como dd/mm/aaaa
+    const dia = String(dataRandomica.getDate()).padStart(2, '0');
+    const mes = String(dataRandomica.getMonth() + 1).padStart(2, '0');
+    const ano = dataRandomica.getFullYear();
+
+    return `${dia}/${mes}/${ano}`;
+};
+
+
+const cadastroElements = new CadastroElements();
+const url = Cypress.config("baseUrl");
+
+
+
+
+class LoginPage {
+  // Acessa o site que será testado
+  acessarSite() {
+    cy.visit(url)
+  }
+
+  // Clica no botão de realizar login
+
+
+  preencherEmailValido() {
+    cy.get(cadastroElements.inputEmail()).should('be.visible');
+    cy.get(cadastroElements.inputEmail()).type(userValido.email);
+  }
+
+  validarCampoVazioSenha() {
+    cy.get(cadastroElements.inputSenha()).should('be.visible');
+    cy.get(cadastroElements.inputSenha()).clear();
+  }
+
+  clicarBotaoEntrar() {
+    cy.get(cadastroElements.botaoEntrar()).should('be.visible');
+    cy.get(cadastroElements.botaoEntrar()).click();
+  }
+
+  validarMensagemErroLogin() {
+    cy.get(cadastroElements.alertaErroLogin()).should('be.visible');
+  }
+
+  validarCampoVazioEmail() {
+    cy.get(cadastroElements.inputEmail()).should('be.visible');
+    cy.get(cadastroElements.inputEmail()).clear();
+  }
+
+  preencherSenhaValida() {
+    cy.get(cadastroElements.inputSenha()).should('be.visible');
+    cy.get(cadastroElements.inputSenha()).type(userValido.senha);
+  }
+
+  preencherEmailInvalido() {
+    cy.get(cadastroElements.inputEmail()).should('be.visible');
+    cy.get(cadastroElements.inputEmail()).type(userInvalido.email);
+  }
+
+  preencherSenhaInvalida() {
+    cy.get(cadastroElements.inputSenha()).should('be.visible');
+    cy.get(cadastroElements.inputSenha()).type(userInvalido.senha);
+  }
+
+  validarRedirecionamentoTelaPrincipal() {
+    cy.url().should('eq', `${url}/admin/home`);
+    cy.get(cadastroElements.cadastrarUsuariosHeader()).should('be.visible');
+    cy.get(cadastroElements.listarUsuariosHeader()).should('be.visible');
+    cy.get(cadastroElements.cadastrarProdutoHeader()).should('be.visible');
+    cy.get(cadastroElements.listarProdutosHeader()).should('be.visible');
+    cy.get(cadastroElements.linkRelatoriosHeader()).should('be.visible');
+    cy.get(cadastroElements.botaoLogout()).should('be.visible');
+  }
+
+  clicarBotaoLogout() {
+    cy.get(cadastroElements.botaoLogout()).should('be.visible');
+    cy.get(cadastroElements.botaoLogout()).click();
+    cy.url().should('eq', `${url}/login`);
+  }
+
+  validarRedirecionamentoTelaLogin() {
+    cy.url().should('eq', `${url}/login`);
+    cy.get(cadastroElements.inputEmail()).should('be.visible');
+    cy.get(cadastroElements.inputSenha()).should('be.visible');
+    cy.get(cadastroElements.botaEntrar()).should('be.visible');
+  }
+}
+
+export default LoginPage;
