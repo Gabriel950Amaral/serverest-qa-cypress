@@ -6,7 +6,11 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test": "cypress run"
+    "test": "cypress run",
+    "allure:generate": "allure generate ./allure-results --clean",
+    "allure:open": "allure open ./allure-report",
+    "allure:report": "npm run allure:generate && npm run allure:open",
+    "allure:clear": "rm -rf ./allure-results ./allure-report"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +19,8 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
     "@cypress/webpack-preprocessor": "^6.0.4",
     "@faker-js/faker": "^8.4.1",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.0",
     "cucumber": "^6.0.7",
     "cypress": "^13.17.0",
     "esbuild": "^0.25.5",
