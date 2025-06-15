@@ -6,6 +6,8 @@ const faker = require('faker-br');
 
 const cadastroElements = new CadastroElements();
 
+const url = Cypress.config("baseUrlApi");
+
 class ListagemPage {
     acessarPaginaListagemUsuarios() {
        cy.intercept('GET', 'https://serverest.dev/usuarios').as('getUsuarios')
