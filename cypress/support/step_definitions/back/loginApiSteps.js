@@ -13,8 +13,8 @@ Given('que o usuário possui credenciais inválidas', () => {
 
 Given('que o usuário possui credenciais válidas', () => {
   usuario = {
-    email: 'usuario1749986681019@email.com',
-    password: '123456'
+    email: 'porfavornaoalterar@gmail.com',
+    password: 'Teste@1234'
   };
 });
 
