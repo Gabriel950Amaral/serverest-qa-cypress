@@ -24,8 +24,8 @@ Then('uma mensagem de erro deve ser retornada', () => {
 
 Given('que o usuário possui credenciais válidas', () => {
   usuario = {
-    email: 'FauzerFranco_Costa@gmail.com',
-    password: '4JE34RS2CAbytSU'
+    email: 'usuario1749986681019@email.com',
+    password: '123456'
   };
 });
 
