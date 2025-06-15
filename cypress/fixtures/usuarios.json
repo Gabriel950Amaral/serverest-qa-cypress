@@ -1,8 +1,8 @@
 [
   {
     "tipo": "valido",
-    "email": "fulano@qa.com",
-    "senha": "teste"
+    "email": "usuario1749986681019@email.com",
+    "senha": "123456"
   },
   {
     "tipo": "invalido",
