@@ -5,8 +5,8 @@ import CadastroElements from "../elements/CadastroElements";
 const faker = require('faker-br');
 
 const userValido = {
-  email: 'usuario1749986681019@email.com',
-  senha: '123456'
+  email: 'porfavornaoalterar@gmail.com',
+  senha: 'Teste@1234'
 };
 
 const userInvalido = {
