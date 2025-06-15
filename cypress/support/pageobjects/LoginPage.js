@@ -1,31 +1,26 @@
-/// <reference types="cypress" />
+/// <reference types="Cypress" />
 
 import CadastroElements from "../elements/CadastroElements";
 
 const faker = require('faker-br');
 
 const userValido = {
-  email: 'fulano@qa.com',
-  senha: 'teste'
+  email: 'johnathangordon@example.com',
+  senha: 'ZoHW)eVV*1'
 };
 
 const userInvalido = {
-  email: 'invalido@teste.com',
+  email: 'invalido099@teste.com',
   senha: 'senhaInvalida'
 };
-
 
 const cadastroElements = new CadastroElements();
 const url = Cypress.config("baseUrl");
 
 class LoginPage {
-  // Acessa o site que será testado
   acessarSite() {
     cy.visit(url)
   }
-
-  // Clica no botão de realizar login
-
 
   preencherEmailValido() {
     cy.get(cadastroElements.inputEmail()).should('be.visible');
