@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import { Given,  Then } from '@badeball/cypress-cucumber-preprocessor';
-const url = Cypress.config("baseUrlApi");
+const url = cypress.config("baseUrlApi");
 
 let response;
 

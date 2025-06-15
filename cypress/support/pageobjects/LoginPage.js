@@ -15,7 +15,7 @@ const userInvalido = {
 };
 
 const cadastroElements = new CadastroElements();
-const url = Cypress.config("baseUrl");
+const url = cypress.config("baseUrl");
 
 class LoginPage {
   acessarSite() {

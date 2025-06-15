@@ -1,5 +1,5 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-const url = Cypress.config("baseUrlApi");
+const url = cypress.config("baseUrlApi");
 
 let usuario;
 let response;
