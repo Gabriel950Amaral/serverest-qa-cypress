@@ -11,6 +11,13 @@ Given('que o usuário possui credenciais inválidas', () => {
   };
 });
 
+Given('que o usuário possui credenciais válidas', () => {
+  usuario = {
+    email: 'usuario1749986681019@email.com',
+    password: '123456'
+  };
+});
+
 Then('o login deve falhar', () => {
   expect(response.status).to.not.eq(200);
   expect([400, 401]).to.include(response.status);
@@ -19,14 +26,6 @@ Then('o login deve falhar', () => {
 Then('uma mensagem de erro deve ser retornada', () => {
   expect(response.body).to.have.property('message');
   expect(response.body.message).to.match(/email e senha|credenciais|incorretos|inv[aá]lidos/i);
-});
-
-
-Given('que o usuário possui credenciais válidas', () => {
-  usuario = {
-    email: 'usuario1749986681019@email.com',
-    password: '123456'
-  };
 });
 
 When('o usuário envia uma requisição de login para a API', () => {

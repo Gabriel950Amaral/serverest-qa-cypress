@@ -38,13 +38,15 @@ Antes de começar, você precisa ter instalado na sua máquina:
 
 1. Após clonar o projeto, crie um arquivo chamado `cypress.env.json` na raiz do repositório.
 
-2. Adicione as seguintes variáveis de ambiente:
+**Atenção:** Os usuários e senhas utilizados nos testes são instáveis, podendo ser alterados ou removidos a qualquer momento. Por isso, é necessário sempre consultar a API que lista os usuários antes de executar os testes e atualizar os dados de login conforme necessário. Isso garante que os testes utilizem credenciais válidas e evitem falhas por conta de dados desatualizados.
+
+2. Adicione o usuário para os testes frontend e backend nos seguintes steps "que o usuário possui credenciais válidas" e "em que estou logado no sistema":
 
 ```json
-{
-  "EMAIL": "email@valido.com",
-  "PASSWORD": "senha_valida"
-}
+usuario = {
+  email: 'PreenchaUmEmailValido',
+  password: 'Senha'
+};
 ```
 
 **Importante:**  
