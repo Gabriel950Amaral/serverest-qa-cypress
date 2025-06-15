@@ -1,0 +1,12 @@
+[
+  {
+    "tipo": "valido",
+    "email": "fulano@qa.com",
+    "senha": "teste"
+  },
+  {
+    "tipo": "invalido",
+    "email": "invalido@teste.com",
+    "senha": "senhaInvalida"
+  }
+]

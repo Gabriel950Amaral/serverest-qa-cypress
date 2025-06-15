@@ -1,5 +1,6 @@
 module.exports = {
-  default: {
-    require: ['cypress/support/step_definitions/**/*.js'],
-  },
+  stepDefinitions: [
+    "cypress/support/frontend/step_definitions/**/*.js",
+    "cypress/support/api/step_definitions/**/*.js"
+  ]
 };

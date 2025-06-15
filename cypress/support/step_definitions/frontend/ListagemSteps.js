@@ -1,6 +1,6 @@
 /* global Given, Then, When */
 import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
-import ListagemPage from "../pageobjects/ListagemPage"
+import ListagemPage from "../../pageobjects/ListagemPage"
 const listagemPage = new ListagemPage()
 
 When('eu acessar a página de listagem de usuários', () => {

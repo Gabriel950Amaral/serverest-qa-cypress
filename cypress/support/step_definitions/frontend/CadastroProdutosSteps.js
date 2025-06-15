@@ -1,6 +1,6 @@
 /* global Given, Then, When */
 import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
-import CadastroProdutosPage from '../pageobjects/CadastrosProdutosPage'
+import CadastroProdutosPage from '../../pageobjects/CadastrosProdutosPage'
 const cadastroProdutosPage = new CadastroProdutosPage()
 
 

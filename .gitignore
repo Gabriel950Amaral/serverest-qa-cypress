@@ -29,4 +29,7 @@ cypress/videos
 cypress/screenshots
 cypress/reports
 
+# Allure results
+allure-results/
+
 #package-lock.json

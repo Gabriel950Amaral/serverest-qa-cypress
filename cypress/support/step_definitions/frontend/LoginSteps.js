@@ -1,22 +1,11 @@
 /* global Given, Then, When */
 import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
-import LoginPage from "../pageobjects/LoginPage"
+import LoginPage from "../../pageobjects/LoginPage"
 const loginPage = new LoginPage()
-
-Given('I open the site', () => {
-  cy.visit('/')
-})
-
-Then('I see the title {string}', (title) => {
-  cy.title().should('eq', title);
-});
-
-
 
 Given('que estou na tela de login do sistema', () => {
   loginPage.acessarSite()
 })
-
 
 When('preencho o campo “Email” com um usuário válido', () => {
   loginPage.preencherEmailValido();
@@ -53,7 +42,7 @@ Then('devo ser redirecionado para a tela principal do sistema', () => {
   loginPage.validarRedirecionamentoTelaPrincipal();
 });
 
-When('que estou logado no sistema', () => {
+Given('que estou logado no sistema', () => {
   loginPage.acessarSite()
   loginPage.preencherEmailValido()
   loginPage.preencherSenhaValida()
