@@ -1,10 +1,12 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 import CadastroElements from "../elements/CadastroElements";
 
 const faker = require('faker-br');
 
 const cadastroElements = new CadastroElements();
+
+const url = Cypress.config("baseUrlApi");
 
 class ListagemPage {
     acessarPaginaListagemUsuarios() {

@@ -103,6 +103,36 @@ npx cypress run
 
 ---
 
+
+## Arquitetura do Projeto e Orientação a Objetos
+
+O projeto utiliza uma arquitetura baseada em **Page Objects** e **Commands**, seguindo princípios de **orientação a objetos (OO)** para garantir organização, reutilização e fácil manutenção do código.
+
+### Como funciona a arquitetura
+
+- **Page Objects:** Cada página ou funcionalidade relevante do sistema possui uma classe dedicada (em `cypress/support/pageobjects/`). Essas classes encapsulam os elementos da interface e as ações possíveis, promovendo reutilização e centralização das regras de negócio da interface.
+- **Elements:** Os seletores de elementos ficam separados em arquivos específicos (em `cypress/support/elements/`), facilitando a manutenção caso haja mudanças na interface.
+- **Commands:** Ações comuns e customizadas são implementadas em `cypress/support/commands.js`, permitindo que sejam reutilizadas em diferentes cenários de teste.
+- **Step Definitions:** Os passos dos cenários BDD (Gherkin) são implementados em arquivos separados por contexto (API e Frontend), facilitando a leitura e manutenção.
+
+### Benefícios da Orientação a Objetos
+
+- **Reutilização:** Métodos e propriedades podem ser reutilizados em diferentes testes, evitando duplicidade de código.
+- **Manutenção facilitada:** Alterações em fluxos ou elementos são feitas em um único local, reduzindo o risco de bugs.
+- **Organização:** O código fica mais modular, separado por responsabilidade, facilitando o entendimento por novos colaboradores.
+- **Escalabilidade:** Novas funcionalidades podem ser adicionadas de forma simples, criando novos objetos ou estendendo os existentes.
+
+### Como trabalhar comeste projeto
+
+1. **Crie ou edite Page Objects** para cada nova página ou fluxo, adicionando métodos que representem ações do usuário.
+2. **Centralize seletores** nos arquivos de elements, evitando espalhar strings de seletores pelo código.
+3. **Utilize e crie comandos customizados** para ações repetitivas.
+4. **Implemente os steps** dos cenários BDD utilizando os métodos dos Page Objects e Commands, mantendo os steps enxutos e legíveis.
+
+Seguindo essa abordagem, o projeto se mantém limpo, escalável e de fácil manutenção, aproveitando ao máximo os benefícios da orientação a objetos na automação de testes.
+
+---
+
 ## Suporte
 
 - **LinkedIn:** [Gabriel Amaral](https://www.linkedin.com/in/gabriel-a-60ba8922a/)

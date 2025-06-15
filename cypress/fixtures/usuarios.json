@@ -1,0 +1,12 @@
+[
+  {
+    "tipo": "valido",
+    "email": "usuario1749986681019@email.com",
+    "senha": "123456"
+  },
+  {
+    "tipo": "invalido",
+    "email": "invalido@teste.com",
+    "senha": "senhaInvalida"
+  }
+]

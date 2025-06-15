@@ -10,7 +10,8 @@
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open ./allure-report",
     "allure:report": "npm run allure:generate && npm run allure:open",
-    "allure:clear": "rm -rf ./allure-results ./allure-report"
+    "allure:clear": "rm -rf ./allure-results ./allure-report",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -24,11 +25,7 @@
     "cucumber": "^6.0.7",
     "cypress": "^13.17.0",
     "esbuild": "^0.25.5",
-    "eslint": "^9.3.0",
     "faker-br": "^0.4.1"
-  },
-  "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/support/steps"
   },
   "dependencies": {
     "faker": "^5.5.3",

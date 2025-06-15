@@ -1,8 +1,7 @@
 /* global Given, Then, When */
 import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor'
-import CadastroPage from "../pageobjects/CadastroPage"
+import CadastroPage from "../../pageobjects/CadastroPage"
 const cadastroPage = new CadastroPage()
-
 
 
 When('eu acessar a página de cadastro de usuários', () => {
